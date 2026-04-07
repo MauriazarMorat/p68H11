@@ -19,4 +19,3 @@ sale	clra
 	staa	2,X		graba una marca de terminacion y
 fin	jmp	fin		 queda "eternamente" aqui.
 	END
-
