@@ -1,0 +1,22 @@
+	p68H11			declara el tipo de microprocesador.
+	ORG	$2000		declara la ubicacion del programa en memoria.
+	ldaa	#8		el numero de ciclos a realizar
+	staa	$60		 se guarda en un contador en memoria.
+	ldx	#$3000		apunta X a la tabla de salida,
+	clra			 hace A:=0,
+	inca			 luego lo incrementa para tener A:=1,
+	staa 	0,X		 y almacena este valor en las dos
+	staa	1,X		 primeras posiciones de la tabla de salida.
+repite	ldaa	0,X		repetir: se toma un elemento en A
+	ldab	1,X		 y el siguiente elemento en B;
+	aba			 se los suma y
+	bcs	sale		   [siempre que no haya habido un error]
+	staa	2,X		 se guarda el elemento sucesivo en la tabla.
+	inx			ahora avanza el puntero y
+	dec	$60		 decrementa el contador,
+	bne	repite		 si no es cero, vuelve a repetir;
+sale	clra
+	staa	2,X		graba una marca de terminacion y
+fin	jmp	fin		 queda "eternamente" aqui.
+	END
+
