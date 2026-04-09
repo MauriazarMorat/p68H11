@@ -1,9 +1,9 @@
     p68H11
     ORG $2000
-    ldaa    #00010001b   ponemos el bit 
+    ldaa    #11111111b   ponemos el bit 
     staa    %60 lo guardo en el 60
     clra        se cleariza a
-    ldaa    #7
+    ldaa    #8
     staa    %64 guardamos la cantidad de bucle
     clra
     ldab    #00000001b   ponemos la mask

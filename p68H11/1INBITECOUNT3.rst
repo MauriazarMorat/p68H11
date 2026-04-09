@@ -1,9 +1,9 @@
                  |    1        p68H11
                  |    2        ORG $2000
-2000    8611     |    3        ldaa    #00010001b   ponemos el bit 
+2000    86FF     |    3        ldaa    #11111111b   ponemos el bit 
 2002    973C     |    4        staa    %60 lo guardo en el 60
 2004    4F       |    5        clra        se cleariza a
-2005    8607     |    6        ldaa    #7
+2005    8608     |    6        ldaa    #8
 2007    9740     |    7        staa    %64 guardamos la cantidad de bucle
 2009    4F       |    8        clra
 200A    C601     |    9        ldab    #00000001b   ponemos la mask
